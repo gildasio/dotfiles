@@ -1,0 +1,45 @@
+general {
+	colors = true
+	interval = 5
+}
+
+order += "ipv6"
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "disk /"
+order += "battery 0"
+order += "cpu_temperature 0"
+order += "cpu_usage"
+order += "volume master"
+order += "tztime local"
+
+cpu_usage {
+	format = "%usage"
+}
+cpu_temperature 0 {
+	format = "%degrees °C"
+}
+tztime local {
+	format = "%Y-%m-%d %H:%M:%S"
+}
+battery 0 {
+	format = "%status %percentage %remaining"
+}
+wireless _first_ {
+	format_up = "W > (%quality at %essid) %ip"
+	format_down = "Wireless is down"
+}
+ethernet _first_ {
+	#if use %speed, need requires root privileges
+	format_up = "E > %ip (%speed)"
+	format_down = "Ethernet is down"
+}
+disk "/" {
+	format = "%avail"
+}
+volume master {
+	format = "V: %volume"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}
