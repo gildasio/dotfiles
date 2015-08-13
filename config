@@ -27,6 +27,9 @@ font pango:monospace 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+# Configuration to a PrintScreen
+bindsym Print exec import -window root ~/images/print_$(date +%F_%H%M%S_%N).png 
+
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
 set $up l
