@@ -182,7 +182,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Floating window size
-floating_minimum_size 700 x 440
+floating_minimum_size 100 x 50
 floating_maximum_size 720 x 480
 
 # Orientation for new workspace
@@ -232,9 +232,11 @@ bar {
 #######################################################################
 # exec i3-config-wizard
 
-exec xterm -e weechat
+# Open weechat when i3 start
+exec xterm -fg grey -bg black -e weechat
+
 #for_window [class=""
-assign [class="XTerm" instance="^weechat$"] -> irc
+# assign [class="XTerm" instance="^weechat$"] -> irc
 
 # move focused container to workspace and go to workspace
 bindsym $mod+Control+1 move container to workspace 1; workspace 1
