@@ -47,8 +47,9 @@ bindsym $mod+Return exec i3-sensible-terminal -fg grey -bg black
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec i3-dmenu-desktop --dmenu="dmenu -p 'search >> '"
+#bindsym $mod+d exec i3-dmenu-desktop --dmenu="dmenu -p 'search >> '"
+#bindsym $mod+d exec i3-dmenu-desktop
+bindsym $mod+d exec dmenu_run -p 'search >> '
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -183,7 +184,7 @@ bindsym $mod+r mode "resize"
 
 # Floating window size
 floating_minimum_size 100 x 50
-floating_maximum_size 720 x 480
+floating_maximum_size 1800 x 900
 
 # Orientation for new workspace
 default_orientation auto
@@ -201,7 +202,7 @@ client.focused #cccde6 #cccde6 #232323 #232323
 client.focused_inactive #232323 #232323 #cccde6 #cccde6
 
 # Set a wallpaper
-exec --no-startup-id feh --bg-scale ~/images/wallpapers/now.jpg
+exec --no-startup-id feh --bg-scale ~/images/wallpapers/now.png
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
