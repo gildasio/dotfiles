@@ -208,17 +208,17 @@ exec --no-startup-id feh --bg-scale ~/images/wallpapers/now.png
 # finds out, if available)
 bar {
 	status_command i3status
-#	position bottom
+	position bottom
 
-#	separator_symbol "::"
+	separator_symbol "::"
 
-#	strip_workspace_numbers no
+	strip_workspace_numbers no
 
-#	colors {
-#		background #232323
-#		statusline #cccde6
-#		separator #7c9cbc
-#	}
+	colors {
+		background #000000
+		statusline #ffffff
+		separator #ffffff
+	}
 }
 
 #######################################################################
