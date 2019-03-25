@@ -1,0 +1,27 @@
+"""" Visual configurations
+set tabstop=4
+set softtabstop=4 expandtab
+set autoindent
+syntax on
+set t_Co=256
+colorscheme pablo
+set number
+set relativenumber
+set ruler
+set showcmd
+set nowrap
+
+"""" Usefull configurations
+set foldmethod=marker
+set foldmarker={{,}}
+
+"""" Python configurations
+set shiftwidth=4
+set smarttab
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
+
+"""" Search configurations
+set incsearch
+set hlsearch
+set ignorecase

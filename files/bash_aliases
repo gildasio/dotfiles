@@ -1,0 +1,28 @@
+# Colors
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias tree='tree -C'
+
+# TODOs
+alias todo='vim ~/cloud/Dropbox/txt/todo.txt'
+alias todoweb='vim ~/cloud/Dropbox/tmp/estudos_web/TODO'
+alias god='vim ~/cloud/Dropbox/txt/god.txt'
+alias webchecklist='vim ~/cloud/Dropbox/tmp/estudos_web/checklist'
+alias pentest='vim ~/cloud/Dropbox/txt/pentest.txt'
+
+# Python
+alias activate='source ./venv/bin/activate'
+
+# Arch
+alias aur='pikaur'
+
+# Utils
+alias transmission-daemon='transmission-daemon -a "*" -c /home/gildasio/cloud/Dropbox/torrents/ --auth --username gildasio --password "bóbaixar" --download-dir /home/gildasio/down/torrents/'
+alias transmission='transmission-remote-cli -c gildasio:bóbaixar@localhost:9091'
+alias trapmusic='mplayer -playlist http://radio.trap.fm/listen56.m3u'
+
+alias tempo='curl wttr.in'
+alias translate='trans -brief'
+alias clean_cache='echo 1 | sudo tee /proc/sys/vm/drop_caches'
