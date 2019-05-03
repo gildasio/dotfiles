@@ -29,6 +29,14 @@ font pango:monospace 7
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Configure aplications to be float as default
+#for_window [class="MPlayer"] floating enable
+#for_window [class="MPlayer"] resize set 640px 480px
+for_window [title="tmux"] floating enable
+for_window [title="tmux"] move position 40 40
+for_window [class="Luakit"] floating enable
+for_window [class="OWASP ZAP"] floating enable
+
 # Multimedia keys configurations
 bindsym Print exec import -window root ~/images/print_$(date +%F_%H%M%S_%N).png
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle

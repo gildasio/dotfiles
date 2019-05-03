@@ -10,6 +10,8 @@ set relativenumber
 set ruler
 set showcmd
 set nowrap
+set colorcolumn=76
+hi ColorColumn ctermbg=darkgrey guibg=darkgrey
 
 """" Usefull configurations
 set foldmethod=marker
