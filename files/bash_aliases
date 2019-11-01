@@ -7,10 +7,11 @@ alias tree='tree -C'
 
 # TODOs
 alias todo='vim ~/cloud/Dropbox/txt/todo.txt'
-alias todoweb='vim ~/cloud/Dropbox/tmp/estudos_web/TODO'
+alias todoweb='vim ~/cloud/Dropbox/tmp/estudos_hacking/web/TODO'
 alias god='vim ~/cloud/Dropbox/txt/god.txt'
-alias webchecklist='vim ~/cloud/Dropbox/tmp/estudos_web/checklist'
+alias webchecklist='vim ~/cloud/Dropbox/tmp/estudos_hacking/web/checklist'
 alias pentest='vim ~/cloud/Dropbox/txt/pentest.txt'
+alias network='vim ~/cloud/Dropbox/txt/network.txt'
 
 # Python
 alias activate='source ./venv/bin/activate'
@@ -20,10 +21,30 @@ alias activate2='source ./venv2/bin/activate'
 alias aur='pikaur'
 
 # Utils
-alias transmission-daemon='transmission-daemon -a "*" -c /home/gildasio/cloud/Dropbox/torrents/ --auth --username gildasio --password "bóbaixar" --download-dir /home/gildasio/down/torrents/'
-alias transmission='transmission-remote-cli -c gildasio:bóbaixar@localhost:9091'
+alias transmission-daemon='transmission-daemon -a "*" -c /home/gildasio/cloud/Dropbox/torrents/ --auth --username gildasio --password "bobaixar" --download-dir /home/gildasio/down/torrents/'
+alias transmission='transmission-remote-cli -c gildasio:bobaixar@localhost:9091'
 alias trapmusic='mplayer -playlist http://radio.trap.fm/listen56.m3u'
+alias camview='mplayer -tv driver=v4l2:gain=1:width=640:height=480:device=/dev/video0:fps=10:outfmt=rgb16 tv://'
+alias record='ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i :0.0 -f alsa -i default -c:v libx264 -preset ultrafast -c:a aac'
+alias mdp='export TERM=xterm-256color && mdp'
+alias streamlink='streamlink --player "mpv --cache 3072"'
+
+# Mutt
+#alias mutt='cd ~/down && mutt'
+alias mutt_riseup='mutt -F /home/gildasio/docs/config/conf/mail/muttrc_riseup'
+alias mutt_dcc='mutt -F /home/gildasio/docs/config/conf/mail/muttrc_dcc'
+alias mutt_ufba='mutt -F /home/gildasio/docs/config/conf/mail/muttrc_ufba'
+alias mutt_pop='mutt -F /home/gildasio/docs/config/conf/mail/muttrc_pop'
 
 alias tempo='curl wttr.in'
 alias translate='trans -brief'
-alias clean_cache='echo 1 | sudo tee /proc/sys/vm/drop_caches'
+alias cache-cleaner='echo 1 | sudo tee /proc/sys/vm/drop_caches'
+
+# Security
+alias pattern-create='/opt/metasploit/tools/exploit/pattern_create.rb'
+alias pattern-offset='/opt/metasploit/tools/exploit/pattern_offset.rb'
+alias metasm='/opt/metasploit/tools/exploit/metasm_shell.rb'
+alias nasm_shell='/opt/metasploit/tools/exploit/nasm_shell.rb'
+alias ssh_unsecure='ssh -o "UserKnownHostsFile /dev/null"'
+
+

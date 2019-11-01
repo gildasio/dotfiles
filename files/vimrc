@@ -10,8 +10,11 @@ set relativenumber
 set ruler
 set showcmd
 set nowrap
-set colorcolumn=76
+set colorcolumn=72
 hi ColorColumn ctermbg=darkgrey guibg=darkgrey
+
+"""" Mutt
+au BufRead ~/.tmp/mutt-* set tw=72
 
 """" Usefull configurations
 set foldmethod=marker
