@@ -8,6 +8,7 @@ ln -fs $PWD/files/i3status.conf ~/.i3status.conf
 ln -fs $PWD/files/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ln -fs $PWD/files/vimrc ~/.vimrc
 ln -fs $PWD/files/tmux.conf ~/.tmux.conf
+ln -fs $PWD/files/mpd.conf ~/.config/mpd/mpd.conf
 
 # Install little usefull scripts
 ln -fs $PWD/scripts/blogup.sh /usr/local/bin/blogup
