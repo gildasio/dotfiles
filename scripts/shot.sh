@@ -6,7 +6,7 @@ help_menu() {
 \n\tLittle script to take print screen and do little tricks
 \n
 \nUsage:
-\n\t$BASH_SOURCE [options] <destination>
+\n\t$BASH_SOURCE [options] [-c|destination]
 \n
 \ndestination\t\t		where to save the image
 \n
@@ -14,7 +14,8 @@ help_menu() {
 \n\t-h\t\t		help menu
 \n\t-r\t\t		print root window
 \n\t-n\t\t		save negative image
-\n\t-b\t\t		save image with borders"
+\n\t-b\t\t		save image with borders
+\n\t-c\t\t      copy image to clipboard"
 
 	echo -e $HELP
 }
@@ -23,7 +24,7 @@ try() {
 	echo "Try: $BASH_SOURCE -h"
 }
 
-while getopts ":hrnb" o
+while getopts ":hrnbc" o
     do
 	case "${o}" in
 		h)
@@ -33,6 +34,7 @@ while getopts ":hrnb" o
 		r)  root=1 ;;
 		n)	negative=1 ;;
 		b)	border=1 ;;
+        c)  clipboard=1 ;;
 		\?)
 			echo "Invalid option: -$OPTARG" >&2
 			try
@@ -42,7 +44,6 @@ while getopts ":hrnb" o
     done
 
 tmp=/tmp/$(date +%F_%H%M%S_%N).png
-filename=${@:$OPTIND:1}
 
 if [[ $root ]]
 then
@@ -61,4 +62,11 @@ then
 	convert $tmp -shave 1x1 -bordercolor black -border 1 $tmp
 fi
 
-mv $tmp $filename
+if [[ $clipboard ]]
+then
+    xclip -selection clipboard -t image/png -i $tmp
+    rm $tmp
+else
+    filename=${@:$OPTIND:1}
+    mv $tmp $filename
+fi
