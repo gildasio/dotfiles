@@ -13,11 +13,11 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 7
+#font pango:monospace 7
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 7
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -32,10 +32,9 @@ floating_modifier $mod
 # Configure aplications to be float as default
 #for_window [class="MPlayer"] floating enable
 #for_window [class="MPlayer"] resize set 640px 480px
-for_window [title="tmux"] floating enable
-for_window [title="tmux"] move position 40 40
+#for_window [title="tmux"] floating enable
+#for_window [title="tmux"] move position 40 40
 for_window [class="Luakit"] floating enable
-for_window [class="OWASP ZAP"] floating enable
 
 # Multimedia keys configurations
 bindsym $mod+Print exec shot -r ~/images/print_$(date +%F_%H%M%S_%N).png
@@ -52,8 +51,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 
 # start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal -f 'Liberation Mono-10' tmux
-bindsym $mod+Return exec st -f 'Liberation Mono-14' tmux
+bindsym $mod+Return exec kitty tmux
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -110,6 +108,9 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
+
+# toggle sticky mode
+bindsym $mod+Shift+w sticky toggle
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -185,6 +186,9 @@ client.focused_inactive #232323 #232323 #cccde6 #cccde6
 # Set wallpaper
 exec --no-startup-id feh --bg-scale ~/images/wallpapers/now.png
 
+# Enable compton
+exec compton -b
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -224,13 +228,14 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+    mode hide
+    status_command i3status
 	position bottom
 
 	strip_workspace_numbers no
 
 	colors {
-		background #000000
+		background #1c1c1c
 		statusline #ffffff
 		separator #ffffff
 	}
