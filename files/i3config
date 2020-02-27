@@ -181,6 +181,12 @@ new_window 1pixel
 new_float 1pixel
 hide_edge_borders vertical
 
+# gaps
+for_window [class=".*"] border pixel 0
+gaps inner 5
+smart_gaps on
+smart_borders on
+
 # Color config
 client.focused #cccde6 #cccde6 #232323 #232323
 client.focused_inactive #232323 #232323 #cccde6 #cccde6
