@@ -10,9 +10,10 @@ ln -fs $PWD/files/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ln -fs $PWD/files/i3config ~/.config/i3/config
 ln -fs $PWD/files/i3status.conf ~/.i3status.conf
 ln -fs $PWD/files/kitty.conf ~/.config/kitty/kitty.conf
-ln -fs $PWD/files/mpd.conf ~/.config/mpd/mpd.conf
+ln -fs $PWD/files/mpd.conf ~/.mpdconf
 ln -fs $PWD/files/tmux.conf ~/.tmux.conf
 ln -fs $PWD/files/vimrc ~/.vimrc
+ln -fs $PWD/files/zathurarc ~/.config/zathura/zathurarc
 
 # Install little usefull scripts
 sudo ln -fs $PWD/scripts/blogup.sh /usr/local/bin/blogup

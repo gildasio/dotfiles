@@ -21,7 +21,7 @@ alias activate2='source ./venv2/bin/activate'
 alias aur='pikaur'
 
 # Utils
-alias transmission-daemon='transmission-daemon -a "*" -c /home/gildasio/.cloud/Dropbox/torrents/ --auth --username gildasio --password "bobaixar" --download-dir /home/gildasio/down/torrents/'
+alias transmission-daemon='transmission-daemon -a "*" -c /home/gildasio/.cloud/Dropbox/torrents/ --auth --username gildasio --password "bobaixar" --download-dir /home/gildasio/.down/torrents/'
 alias transmission='transmission-remote-cli -c gildasio:bobaixar@localhost:9091'
 alias trapmusic='mplayer -playlist http://radio.trap.fm/listen56.m3u'
 alias camview='mplayer -tv driver=v4l2:gain=1:width=640:height=480:device=/dev/video0:fps=10:outfmt=rgb16 tv://'

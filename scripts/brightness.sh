@@ -12,7 +12,8 @@ else
         new=$max
     fi
     
-    echo $new | gksu tee /sys/class/backlight/intel_backlight/brightness
+    echo $new | sudo tee /sys/class/backlight/intel_backlight/brightness
+    #echo $new | gksu tee /sys/class/backlight/intel_backlight/brightness
     #echo $new > /sys/class/backlight/intel_backlight/brightness
     echo "Brightness updated: $new"
 fi

@@ -13,12 +13,17 @@ set nowrap
 set colorcolumn=72
 hi ColorColumn ctermbg=darkgrey guibg=darkgrey
 
-"""" Mutt
-au BufRead ~/.tmp/mutt-* set tw=72
-
 """" Usefull configurations
 set foldmethod=marker
 set foldmarker={{,}}
+
+"""" Search configurations
+set incsearch
+set hlsearch
+set ignorecase
+
+"""" Mutt
+au BufRead ~/.tmp/mutt-* set tw=72
 
 """" Python configurations
 set shiftwidth=4
@@ -26,7 +31,5 @@ set smarttab
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
 
-"""" Search configurations
-set incsearch
-set hlsearch
-set ignorecase
+"""" Makefile configuration
+autocmd FileType make set noexpandtab softtabstop=0 shiftwidth=8

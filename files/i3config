@@ -70,9 +70,9 @@ focus_follows_mouse yes
 
 # change focus
 bindsym $mod+j focus left
-bindsym $mod+k focus down
+bindsym $mod+k focus right
 bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+Shift+h focus down
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -82,9 +82,9 @@ bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
+bindsym $mod+Shift+k move right
 bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+d move down
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -183,7 +183,7 @@ hide_edge_borders vertical
 
 # gaps
 for_window [class=".*"] border pixel 0
-gaps inner 5
+gaps inner 10
 smart_gaps on
 smart_borders on
 
