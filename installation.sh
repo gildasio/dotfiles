@@ -23,3 +23,6 @@ sudo ln -fs $PWD/scripts/i3-get-window-criteria.sh /usr/local/bin/i3-get-window-
 sudo ln -fs $PWD/scripts/rfc.sh /usr/local/bin/rfc
 sudo ln -fs $PWD/scripts/shot.sh /usr/local/bin/shot
 sudo ln -fs $PWD/scripts/invert.sh /usr/local/bin/invert
+sudo ln -fs $PWD/scripts/surf-tor.sh /usr/local/bin/surf-tor
+sudo ln -fs $PWD/scripts/surf-zap.sh /usr/local/bin/surf-zap
+sudo ln -fs $PWD/scripts/surf-burp.sh /usr/local/bin/surf-burp

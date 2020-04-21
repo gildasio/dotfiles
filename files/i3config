@@ -35,6 +35,7 @@ floating_modifier $mod
 #for_window [title="tmux"] floating enable
 #for_window [title="tmux"] move position 40 40
 for_window [class="Luakit"] floating enable
+for_window [class="Surf"] floating enable
 
 # Multimedia keys configurations
 bindsym $mod+Print exec shot -r ~/images/print_$(date +%F_%H%M%S_%N).png
