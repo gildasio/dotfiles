@@ -2,7 +2,7 @@
 
 # Configure dotfiles
 mkdir -p ~/.gnupg/ ~/.config/i3/ ~/.config/kitty ~/.config/mpd
-ln -fs $PWD/files/bash_aliases ~/.bash_aliases
+ln -fs $PWD/files/shell_aliases ~/.shell_aliases
 ln -fs $PWD/files/bashrc ~/.bashrc
 ln -fs $PWD/files/fish.conf ~/.config/fish/config.fish
 ln -fs $PWD/files/fish_variables ~/.config/fish/fish_variables

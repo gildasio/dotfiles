@@ -1,0 +1,73 @@
+# Colors
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias tree='tree -C'
+
+# TODOs
+alias todo='vim ~/.cloud/Dropbox/txt/todo.txt'
+alias todoweb='vim ~/.cloud/Dropbox/tmp/estudos_hacking/web/TODO'
+alias god='vim ~/.cloud/Dropbox/txt/god.txt'
+alias webchecklist='vim ~/.cloud/Dropbox/tmp/estudos_hacking/web/checklist'
+alias pentest='vim ~/.cloud/Dropbox/txt/pentest.txt'
+alias network='vim ~/.cloud/Dropbox/txt/network.txt'
+
+# Python
+alias activate='source ./venv/bin/activate'
+alias activate2='source ./venv2/bin/activate'
+
+# Arch
+alias aur='pikaur'
+
+# Utils
+alias transmission-daemon='transmission-daemon -a "*" -c /home/gildasio/.cloud/Dropbox/torrents/ --auth --username gildasio --password "bobaixar" --download-dir /home/gildasio/.down/torrents/'
+alias transmission='transmission-remote-cli -c gildasio:bobaixar@localhost:9091'
+alias trapmusic='mplayer -playlist http://radio.trap.fm/listen56.m3u'
+alias camview='mplayer -tv driver=v4l2:gain=1:width=640:height=480:device=/dev/video0:fps=10:outfmt=rgb16 tv://'
+alias record='ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i :0.0 -f alsa -i default -c:v libx264 -preset ultrafast -c:a aac'
+alias mdp='export TERM=xterm-256color && mdp'
+alias streamlink='streamlink --player "mpv --cache 3072"'
+alias yv='youtube-viewer'
+alias yd='youtube-dl'
+alias th='theharvester -b baidu,bingapi,bufferoverun,certspotter,crtsh,dnsdumpster,dogpile,duckduckgo,exalead,github-code,google,hackertarget,hunter,intelx,linkedin,linkedin_links,netcraft,otx,rapiddns,securityTrails,spyse,sublist3r,suip,threatcrowd,threatminer,trello,twitter,urlscan,virustotal,yahoo'
+alias calendar='khal --color interactive'
+
+# Mutt
+#alias mutt='cd ~/down && mutt'
+alias mutt_riseup='mutt -F /home/gildasio/.config/personal/conf/mail/muttrc_riseup'
+alias mutt_gmail='mutt -F /home/gildasio/.mutt/accounts/gmail_personal'
+alias mutt_dcc='mutt -F /home/gildasio/.config/personal/conf/mail/muttrc_dcc'
+alias mutt_ufba='mutt -F /home/gildasio/.config/personal/conf/mail/muttrc_ufba'
+alias mutt_pop='mutt -F /home/gildasio/.config/personal/conf/mail/muttrc_pop'
+alias mutt_incidentes='mutt -F /home/gildasio/.config/personal/conf/mail/muttrc_incidentes'
+alias mutt_fraudes='mutt -F /home/gildasio/.config/personal/conf/mail/muttrc_fraudes -f =abuse-bb'
+alias mutt_allele='mutt -F /home/gildasio/.config/personal/conf/mail/muttrc_allele'
+
+alias tempo='curl wttr.in'
+alias covid='curl -L corona-stats.online\?top=10'
+alias cache-cleaner='echo 1 | sudo tee /proc/sys/vm/drop_caches'
+alias tep='trans -brief en:pt'
+alias tpe='trans -brief pt:en'
+alias duck='w3m duckduckgo.com'
+alias web='w3m -o auto_image=FALSE /tmp'
+
+# Security
+alias pattern-create='/opt/metasploit/tools/exploit/pattern_create.rb'
+alias pattern-offset='/opt/metasploit/tools/exploit/pattern_offset.rb'
+alias metasm='/opt/metasploit/tools/exploit/metasm_shell.rb'
+alias nasm_shell='/opt/metasploit/tools/exploit/nasm_shell.rb'
+alias ssh_unsecure='ssh -o "UserKnownHostsFile /dev/null"'
+
+# Gaita
+alias gaita1="youtube-viewer 'https://www.youtube.com/playlist?list=PLpqpn4XQb313uUuo_sCXX_SPIoZSZcS8o'"
+alias gaita2="youtube-viewer 'https://www.youtube.com/playlist?list=PLg3JTNlPp3dp6NeJhL6eGRVp2OoFSod2C'"
+alias gaita3="youtube-viewer 'https://www.youtube.com/playlist?list=PLQqOxhhFXCq2a7bql5jeWfOuZi3d4AoJx'"
+alias gaita4="youtube-viewer 'https://www.youtube.com/playlist?list=PLQqOxhhFXCq01D25D52MO_XXO0Xfp76Cl'"
+
+# Softs
+alias stegoveritas='/home/gildasio/.local/bin/stegoveritas'
+alias stegcracker='/home/gildasio/.local/bin/stegcracker'
+alias chepy='/home/gildasio/.local/bin/chepy'
+
+source ~/.shell_aliases_priv8
