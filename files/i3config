@@ -36,14 +36,22 @@ floating_modifier $mod
 #for_window [title="tmux"] move position 40 40
 for_window [class="Luakit"] floating enable
 for_window [class="Surf"] floating enable
+for_window [class="MEGAsync"] floating enable
+for_window [class="Maltego" title=" "] floating enable
+for_window [class="Vncviewer"] floating enable
+for_window [class="flameshot"] floating enable
+for_window [class="feh"] floating enable
 
 # Multimedia keys configurations
 bindsym $mod+Print exec shot -r ~/images/print_$(date +%F_%H%M%S_%N).png
 #bindsym Print exec shot -c -b
 bindsym Print exec flameshot gui
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
+bindsym $mod+XF86AudioMute exec amixer -D pulse sset Capture toggle
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
+bindsym Shift+XF86AudioLowerVolume exec mpc volume -10
+bindsym Shift+XF86AudioRaiseVolume exec mpc volume +10
 bindsym XF86AudioPrev exec mpc prev
 bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioNext exec mpc next
@@ -51,6 +59,9 @@ bindsym $mod+F8 exec invert
 bindsym XF86Search exec qutebrowser
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+
+# start firefox
+bindsym $mod+Shift+f exec firefox -P
 
 # start a terminal
 bindsym $mod+Return exec kitty tmux
@@ -193,10 +204,10 @@ client.focused #cccde6 #cccde6 #232323 #232323
 client.focused_inactive #232323 #232323 #cccde6 #cccde6
 
 # Set wallpaper
-exec --no-startup-id feh --bg-scale ~/images/wallpapers/now.png
+exec --no-startup-id feh --bg-scale ~/.images/wallpapers/now.png
 
 # Enable compton
-exec compton -b
+#exec compton -b
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

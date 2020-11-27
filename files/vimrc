@@ -1,3 +1,25 @@
+"""" Plugins configuration
+execute pathogen#infect()
+filetype plugin indent on
+set nocompatible
+"""""""" NerdTree
+map <C-n> :NERDTreeToggle<CR>
+map <C-k> :NERDTreeFocus<CR>
+let NERDTreeShowHidden=1
+"""""""" open NerdTree if no file selected
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"""""""" close vim if it's only NerdTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"""" Tabs configuration
+nnoremap fh  :tabfirst<CR>
+nnoremap fk  :tabnext<CR>
+nnoremap fj  :tabprev<CR>
+nnoremap fl  :tablast<CR>
+nnoremap fd  :tabclose<CR>
+nnoremap fn :tabnew<CR>
+
 """" Visual configurations
 set tabstop=4
 set softtabstop=4 expandtab
@@ -5,17 +27,19 @@ set autoindent
 syntax on
 set t_Co=256
 colorscheme pablo
-set number
-set relativenumber
 set ruler
 set showcmd
 set nowrap
-set colorcolumn=72
+set number
+set relativenumber
+set tw=80
+set colorcolumn=80
 hi ColorColumn ctermbg=darkgrey guibg=darkgrey
 
 """" Usefull configurations
 set foldmethod=marker
 set foldmarker={{,}}
+set nofoldenable
 
 """" Search configurations
 set incsearch
@@ -33,3 +57,10 @@ autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
 
 """" Makefile configuration
 autocmd FileType make set noexpandtab softtabstop=0 shiftwidth=8
+
+""" Vim desk configuration
+"""map <F12> :!feh ...
+nmap cc :!cat % \| xsel -b<CR><CR>
+nmap W :w<CR>
+nmap tr :!tep <cword><CR>
+nnoremap <esc><esc> :noh<CR>
