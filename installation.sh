@@ -18,6 +18,7 @@ ln -fs $PWD/files/zathurarc ~/.config/zathura/zathurarc
 # Install little usefull scripts
 sudo ln -fs $PWD/scripts/blogup.sh /usr/local/bin/blogup
 sudo ln -fs $PWD/scripts/brightness.sh /usr/local/bin/brightness
+sudo ln -fs $PWD/scripts/clean.sh /usr/local/bin/clean_cache
 sudo ln -fs $PWD/scripts/decktape.sh /usr/local/bin/decktape
 sudo ln -fs $PWD/scripts/i3-get-window-criteria.sh /usr/local/bin/i3-get-window-criteria
 sudo ln -fs $PWD/scripts/rfc.sh /usr/local/bin/rfc
