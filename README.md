@@ -20,7 +20,9 @@ They are used to configure my current workstation.
 
 ## Scripts
 
+* `clean`: run some routines to clean my archlinux setup
 * `decktape`: run [decktape](https://github.com/astefanutti/decktape) in a docker container
+* `i3-get-window-criteria`: get the criteria for a window that can be used to configure i3wm
 * `rfc`: read RFCs offline
 * `shot`: take screenshots using `import` and do some editing using `convert`
 
