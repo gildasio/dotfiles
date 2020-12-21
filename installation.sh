@@ -14,6 +14,9 @@ ln -fs $PWD/files/mpd.conf ~/.mpdconf
 ln -fs $PWD/files/tmux.conf ~/.tmux.conf
 ln -fs $PWD/files/vimrc ~/.vimrc
 ln -fs $PWD/files/zathurarc ~/.config/zathura/zathurarc
+ln -fs $PWD/files/shell_variables ~/.shell_variables
+ln -fs $PWD/files/gdbinit ~/.gdbinit
+ln -fs $PWD/files/newsboat ~/.newsboat/config
 
 # Install little usefull scripts
 sudo ln -fs $PWD/scripts/blogup.sh /usr/local/bin/blogup

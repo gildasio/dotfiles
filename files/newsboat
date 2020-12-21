@@ -1,0 +1,2 @@
+feed-sort-order unreadarticlecount-asc
+browser "echo %u | xsel -b"
